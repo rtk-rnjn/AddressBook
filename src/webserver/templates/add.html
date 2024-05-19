@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <h1 class="text-4xl text-center mt-10">Address Book</h1>
+    <div class="flex justify-center mt-10">
+        <form action="/add" method="post">
+            {{ form.csrf_token }}
+            <div class="flex flex-col">
+                {{ form.recipient_name.label }}
+                {{ form.recipient_name(class="border border-gray-400 p-2 rounded-md") }}
+            </div>
+            <div class="flex flex-col mt-4">
+                {{ form.organization_name.label }}
+                {{ form.organization_name(class="border border-gray-400 p-2 rounded-md") }}
+            </div>
+            <div class="flex flex-col mt-4">
+                {{ form.building_number.label }}
+                {{ form.building_number(class="border border-gray-400 p-2 rounded-md") }}
+            </div>
+            <div class="flex flex-col mt-4">
+                {{ form.apartment_number.label }}
+                {{ form.apartment_number(class="border border-gray-400 p-2 rounded-md") }}
+            </div>
+            <div class="flex flex-col mt-4">
+                {{ form.street_name.label }}
+                {{ form.street_name(class="border border-gray-400 p-2 rounded-md") }}
+            </div>
+            <div class="flex flex-col mt-4">
+                {{ form.city.label }}
+                {{ form.city(class="border border-gray-400 p-2 rounded-md") }}
+            </div>
+            <div class="flex flex-col mt-4">
+                {{ form.state.label }}
+                {{ form.state(class="border border-gray-400 p-2 rounded-md") }}
+            </div>
+            <div class="flex flex-col mt-4">
+                {{ form.postal_code.label }}
+                {{ form.postal_code(class="border border-gray-400 p-2 rounded-md") }}
+            </div>
+            <div class="flex justify-center mt-4">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
+                    Add Contact
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
