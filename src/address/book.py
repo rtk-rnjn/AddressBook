@@ -141,10 +141,10 @@ class AddressBook:
             data = json.load(file)
 
         address_book = cls()
-        address_book.book_holder_name = data["name"]
-        address_book.book_holder_id = data["id"]
+        address_book.book_holder_name = data.get("name")
+        address_book.book_holder_id = data.get("id")
 
-        for address in data["addresses"]:
+        for address in data.get("addresses", []):
             address_book.add_address(Address(**address))
 
         return address_book
